@@ -54,7 +54,7 @@ class ReportService:
 
         # Map customer IDs to names
         customers = self.cs.list_customers()
-        cust_map = {c["id"]: c["name"] for c in customers}
+        cust_map = {c["cust_id"]: c["name"] for c in customers}
 
         return [
             {"customer_id": cid, "customer_name": cust_map.get(cid, "Unknown"), "total_orders": cnt}
